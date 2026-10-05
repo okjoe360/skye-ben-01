@@ -1,0 +1,36 @@
+{% extends "layouts/main.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Complete Registration | Oil & Gas {% endblock %}
+
+{% block main %}
+<section>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-12">
+                <div class="vstack gap-3">
+                    <div class="p-2 bg-body-secondary">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="p-2"><img src="{% static 'assets/images/img04.png' %}" alt="Logo" width="65px"></div>
+                            <div class="p-2"><h4>Obiano Oil & Gas</h4></div>
+                        </div>
+                    </div>
+                    <div class="p-2">
+                        <h4 class="text-center border-bottom border-default border-2 pb-2">Complete User Profile Registration</h4>
+                    </div>
+                    <div class="p-2">
+                        <form>
+                            {% csrf_token %}
+
+                            {% crispy form %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
